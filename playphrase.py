@@ -357,7 +357,7 @@ def main(media_dir, search_phrase, phrase_mode, phrases_gap, padding, limit, out
                         phrase_end = sub_splitted[match_sub_pos][-1][1]
 
             for ext in movie_extensions:
-                movie_filename = filename + "." + ext
+                movie_filename = filename.rstrip("_eng") + "." + ext
                 if os.path.isfile(movie_filename):
                     clips.append((os.path.abspath(movie_filename), phrase_start - padding, phrase_end + padding))
                     break
